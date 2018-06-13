@@ -13,7 +13,7 @@
         function vibrar(){            
             navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
             if (navigator.vibrate) {
-                navigator.vibrate([5000]);
+              //  navigator.vibrate([500000]);
             } 
             else {alert('Su navegador no soporta la funcion de vibrar.')}            
             }  
@@ -44,63 +44,68 @@
 <body>
 
 <div class="container">
-  <h2 class="titulo">Inscríbete!</h2>
+  <h2>Inscríbete en tu Estándar!</h2>
   <hr/>
   <form class="form-horizontal" id="form" name="form" action="/action_page.php">
      
       <div class="form-group">      
         <label class="control-label col-sm-2" for="foto">Foto</label>
       <div class="col-sm-10">
-        <input class="form-control" placeholder="Fotografía" accept="image/*" id="foto" type="file" capture="camera"/>
+        <input class="form-control" accept="image/*" id="foto" type="file" capture/>
       </div>
     </div>
       
       <div class="form-group">      
       <label class="control-label col-sm-2" for="curso">Curso</label>
-      
+      <div class="col-sm-10">
         <select id=curso name=curso>
-          <option value="Alfabetización Digital">Alfabetización Digital</option>
-          <option value="Ofimatica">Ofimática</option>
-          <option value="Diseño Grafico">Diseño Gráfico</option>
-          <option value="Programacion">Programación</option>
-            <option value="Robotica">Robótica</option>
+          <option value="ITIL">ITIL</option>
+          <option value="CMMI">CMMI</option>
+          <option value="PMBOK">PMBOK</option>
+          <option value="COBIT">COBIT</option>            
         </select>
       </div>
+    </div>
     
-    
-        <div class="form-group">      
+        <div class="form-group">
+      <label class="control-label col-sm-2" for="dni">DNI/NIE</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="dni" placeholder="Digite el DNI/NIE" name="dni" pattern="[A-Za-z0-9]{9}" title="Digite un DNI/NIE válido" maxlength="9" oninput="validacion('dni')" onkeyup="activar()" required>
+        <input type="text" class="form-control" id="dni" placeholder="Entre el DNI/NIE" name="dni" pattern="[A-Za-z0-9]{9}" title="Digite un DNI/NIE válido" maxlength="9" oninput="validacion('dni')" onkeyup="activar()" required>
       </div>
     </div>      
       
-      <div class="form-group">      
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="nombre">Name</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="nombre" placeholder="Digite nombre" name="nombre" pattern="[A-Za-z ]{2,20}" title="Digite 2 o más letras, sin números" minlength="2" maxlength="30" onkeyup="activar()" oninput="validacion('nombre')" required>
+        <input type="text" class="form-control" id="nombre" placeholder="Entre nombre" name="nombre" pattern="[A-Za-z ]{2,20}" title="Digite 2 o más letras, sin números" minlength="2" maxlength="30" onkeyup="activar()" oninput="validacion('nombre')" required>
       </div>
     </div>
           
-     <div class="form-group">      
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="apellidos">Last Name</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="apellidos" placeholder="Digite apellidos" name="apellidos" pattern="[A-Za-z ]{2,40}" title="Digite 2 o más letras, sin números" minlength="2" maxlength="30" onkeyup="activar()" oninput="validacion('apellidos')" required>
+        <input type="text" class="form-control" id="apellidos" placeholder="Entre apellidos" name="apellidos" pattern="[A-Za-z ]{2,40}" title="Digite 2 o más letras, sin números" minlength="2" maxlength="30" onkeyup="activar()" oninput="validacion('apellidos')" required>
       </div>
     </div>
       
-       <div class="form-group">      
+       <div class="form-group">
+      <label class="control-label col-sm-2" for="fnacimiento">Birthdate</label>
       <div class="col-sm-10">          
-        <input type="date" class="form-control" id="fnacimiento" placeholder="Fecha de Nacimiento" name="fnacimiento" max="2008-12-31" oninput="validacion('fnacimiento')" onkeyup="activar()" required>
+        <input type="date" class="form-control" id="fnacimiento" placeholder="F.Nacimiento" name="fnacimiento" max="2008-12-31" oninput="validacion('fnacimiento')" onkeyup="activar()" required>
       </div>
     </div>
       
-     <div class="form-group">      
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="telefono">Phone</label>
       <div class="col-sm-10">          
-        <input type="tel" class="form-control" id="telefono" placeholder="Digite teléfono" name="telefono" pattern="[+0-9]{9,12}" title="Digite un teléfono correcto" maxlength="12" oninput="validacion('telefono')" onkeyup="activar()" required>
+        <input type="tel" class="form-control" id="telefono" placeholder="Entre teléfono" name="telefono" pattern="[+0-9]{9,12}" title="Digite un teléfono correcto" maxlength="12" oninput="validacion('telefono')" onkeyup="activar()" required>
       </div>
     </div>
       
-     <div class="form-group">      
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="email">E-mail</label>
       <div class="col-sm-10">          
-        <input type="email" class="form-control" id="email" placeholder="Digite e-mail" name="email" title="Digite un email correcto" minlength="3" oninput="validacion('email')" onkeyup="activar()" required>
+        <input type="email" class="form-control" id="email" placeholder="Entre e-mail" name="email" title="Digite un email correcto" minlength="3" oninput="validacion('email')" onkeyup="activar()" required>
       </div>
     </div>
       
@@ -111,7 +116,7 @@
        <div class="col-sm-10">        
             <input href="#" type="submit" name="save" id="save" class="btn btn-info" onclick="vibrar()" disabled formaction="inscritos.html" value="Save">
             &nbsp;&nbsp;
-            <a class="btn btn-info" href="inscritos.html" onclick="vibrar()">List</a>
+            <a class="btn btn-info" href="inscritos.html" onclick="vibrar()">List</a>            
       </div>
     </div>
   </form>
@@ -119,6 +124,7 @@
 
     <script type="text/javascript" src="js/estudiantes.js"></script>
 </body>
-    
-    <footer style="text-align:center" > Copyright - Pedro Tejada | Diseño de App | 2018 </footer>    
+    <br><br><br><br><br><br><br><br><br><br>
+
+<footer style="text-align:center" > Copyright - Pedro Tejada de los Santos | Diseño de Aplicaciones Web | 2018 </footer>
 </html>
